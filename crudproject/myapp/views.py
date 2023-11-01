@@ -70,7 +70,7 @@ def account(request):
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
-            return redirect('account')
+            return redirect('myapp:account')
         # Note: You can use 'elif' instead of 'if' here
         elif form.is_valid():
             cd = form.cleaned_data
@@ -78,7 +78,7 @@ def account(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect('index')
+                    return redirect('myapp:index')
                 else:
                     return render(request, 'main/crudstart.html', {'form': form})
             else:
