@@ -22,7 +22,7 @@
                 <h2 class="text-white bg-dark text-center p-2">Course Information Form</h2>
                 <br>
 
-                <form action="/show/" method="post"action="{% url 'showdata' %}" >
+                <form action="/show/" method="post"action="{% url 'myapp:showdata' %}" >
                     {% csrf_token %}
 
                     <div class="form-group">
